@@ -67,7 +67,7 @@
 
 - name: Stat for rootless docker
   stat:
-    path: "{{ lookup('env', 'XDG_RUNTIME_DIR') }}/docker.sock"
+    path: "{{ ansible_env.XDG_RUNTIME_DIR }}/docker.sock"
   register: rootless_conf
 
 - name: Uninstall rootless docker
